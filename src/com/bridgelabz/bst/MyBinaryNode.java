@@ -11,17 +11,21 @@ public class MyBinaryNode<K extends Comparable<K>> {
 		this.left = null;
 		this.right = null;
 	}
-	
+
 	@Override
 	public String toString() {
-		StringBuffer str = new StringBuffer();
+		StringBuilder builder = new StringBuilder();
+		builder.append("MyBinaryNode{key=" + key + "}");
+
 		if (left != null) {
-			str.append("Node{Key=" + left.key + "}<=");
+			builder.insert(0, "MyBinaryNode{key=" + left.key
+					+ "}<--");
 		}
-		str.append("Node{Key=" + key + "}");
 		if (right != null) {
-			str.append("=>Node{Key=" + right.key + "}");
+			builder.append("-->MyBinaryNode{key="
+					+ right.key + "}");
 		}
-		return str.toString();
+
+		return builder.toString();
 	}
 }

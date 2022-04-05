@@ -1,5 +1,8 @@
 package com.bridgelabz.bst.test;
 
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
 import org.junit.Test;
 
 import com.bridgelabz.bst.BinarySearchTree;
@@ -10,21 +13,25 @@ public class BSTTest {
 	@Test
 	public void addThreeNodeToBST() {
 
-		MyBinaryNode<Integer> firstNode = new MyBinaryNode<Integer>(
-				56);
-		MyBinaryNode<Integer> secondNode = new MyBinaryNode<Integer>(
-				30);
-		MyBinaryNode<Integer> thirdNode = new MyBinaryNode<Integer>(
-				70);
-		MyBinaryNode<Integer> fourthNode = new MyBinaryNode<Integer>(
-				22);
-
 		BinarySearchTree<Integer> bst = new BinarySearchTree<>();
-		bst.add(firstNode);
-		bst.add(secondNode);
-		bst.add(thirdNode);
-		bst.add(fourthNode);
-		
+		bst.add(56);
+		bst.add(30);
+		bst.add(70);
+		bst.add(45);
+		bst.add(22);
+		bst.add(65);
+		bst.add(34);
+		bst.add(23);
+		bst.add(54);
+		bst.add(33);
+
 		System.out.println(bst);
+		
+		assertTrue(bst.search(45));
+		assertFalse(bst.search(21));
+		assertTrue(bst.search(65));
+		assertFalse(bst.search(99));
+		assertTrue(bst.search(33));
 	}
+
 }
